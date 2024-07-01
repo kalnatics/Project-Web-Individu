@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Montserrat:wght@800&family=Quicksand:wght@700&family=Sora&display=swap');
+
+body {
+    font-family: 'Quicksand';
+    background: #ED7D31;
+    color: #F6F1EE;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    transition: background 0.2s linear;
+}
+
+/*Dark Theme*/
+body.dark {background-color: #4F4A45;} /* #9b59b6 */
+
+body.dark h1, body.dark .support a {color: #fff;}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #F6F1EE;
+  width: 50px;
+  height: 18px;
+  border-radius: 15px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {color: #f1c40f;}
+
+.fa-sun {color: #f39c12;}
+
+.checkbox-label .ball {
+  background-color: #4F4A45;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 8px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+/* CSS untuk elemen Form 2 yang ingin dianimasikan */
+
+main {
+    display: grid;
+    grid-template-columns: 35% 65%; 
+    grid-gap: 1%; /* Jarak antara sel dalam grid */
+    width: 85%;
+    position: absolute;
+    left: 6%;
+    top: 8%;
+}
+.main-content {
+    font-size: 2.5em;
+    font-family: 'Montserrat';
+    opacity: 90%;
+}
+.sub-content img {
+    position: absolute;
+    left: 87%;
+    top: 14%;
+    transform: translateX(-10%);
+    width: 26%; 
+}
+.sub-content {
+    background-color: #F6F1EE;
+    color: #4F4A45;
+    margin-top: 7%;
+    font-size: 1.5em;
+    width: 100%;
+    height: fit-content;
+    padding: 2.5% 2% 2.5% 6%;
+    border-radius: 50px;
+}
+.navbar {
+    position: absolute;
+    top: 20px;
+    left: 2.3%;
+    width: 93%;
+    padding: 0.5%;
+    padding-left: 1%;
+    padding-right: 1.5%;
+    background-color: #4F4A45;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar input {
+    width: 25%;
+    font-family: 'Quicksand';
+    font-size: 1.5em;
+    padding-left: 1%;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: white;
+}
+.navbar p {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 10px;
+    color: white;
+}
+.navbar a:hover {
+    background-color: #F6F1EE;
+    padding: 0%;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 1.75em;
+    color: #ED7D31;
+    border-radius: 50px;
+}
+.navbar a:focus {
+    color: #ED7D31;
+    background-color: #F6F1EE;
+    padding: 0%;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 1.75em;
+    border-radius: 50px;
+}
+
+.content-item {
+    margin-top: 20px;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    position: absolute;
+    top: 60%;
+    left: 5%;
+}
+.dif {
+    background-color: #766859;
+    margin: 2%;
+    padding: 1%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+.icon-item {
+    background-color: #C2B3A4;
+    margin: 2%;
+    padding: 1%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.content-item img {
+    width: 25%;
+    position: relative;
+    left: 50%;
+    top: -50px;
+    transform: translateX(-50%);
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 30% 40% 30%; 
+    grid-gap: 1%; /* Jarak antara sel dalam grid */
+    width: 89%;
+    position: absolute;
+    left: 2.3%;
+    top: 80%;
+    background-color: #F6F1EE;  
+    padding: 3%;
+    color: #000000;
+}
+.contact p1 {
+    font-family: 'Montserrat';
+    font-size: 2.25em;
+}
+.contact p2 {
+    font-family: 'Sora';
+    font-size: 1em;
+}
+.cr {
+    text-align: center;
+    font-size: 1.25em;
+    font-family: 'Sora';
+    margin-top: 2%;
+}
+.social-icons img {
+    width: 9%;
+    margin: 2%;
+    margin-top: 6%;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    main {
+        grid-template-columns: 1fr;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 5%;
+    }
+    .sub-content img {
+        left: 75%;
+        width: 40%;
+    }
+    .sub-content {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        font-size: 2em;
+        text-align: center;
+    }
+    .sub-content img {
+        left: 50%;
+        width: 50%;
+    }
+    .sub-content {
+        margin-top: 5%;
+        padding: 5%;
+        font-size: 1em;
+    }
+    .navbar input {
+        width: 50%;
+        font-size: 1em;
+    }
+    .navbar a {
+        font-size: 1em;
+    }
+    .navbar a:hover, .navbar a:focus {
+        font-size: 1.25em;
+    }
+    .content-item {
+        flex-direction: column;
+        align-items: center;
+        top: auto;
+        position: relative;
+        margin-top: 10%;
+    }
+    .content-item img {
+        width: 50%;
+        top: auto;
+    }
+    footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+        top: auto;
+        position: relative;
+        padding: 10%;
+        font-size: 1em;
+    }
+    .social-icons img {
+        width: 15%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        font-size: 1.5em;
+    }
+    .sub-content img {
+        width: 75%;
+    }
+    .sub-content {
+        font-size: 0.9em;
+        padding: 10%;
+    }
+    .navbar input {
+        width: 70%;
+        font-size: 0.8em;
+    }
+    .navbar a {
+        font-size: 0.8em;
+    }
+    .navbar a:hover, .navbar a:focus {
+        font-size: 1em;
+    }
+    .content-item img {
+        width: 75%;
+    }
+    footer {
+        font-size: 0.8em;
+        padding: 15%;
+    }
+    .social-icons img {
+        width: 20%;
+    }
+}

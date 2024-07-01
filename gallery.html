@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gallery.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="title.html"> KAL'S | </a>
+        <a href="beranda.html">Beranda</a>
+        <a href="#me">Me!</a>
+        <a href="gallery.html">Galery</a>
+        <a href="#more">More</a>
+        <input type="text" placeholder="search...">
+        <div>
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" class="checkbox-label">
+              <i class="fas fa-moon"></i>
+              <i class="fas fa-sun"></i>
+              <span class="ball"></span>
+            </label>
+        </div>
+        <script>
+            const checkbox = document.getElementById("checkbox")
+                checkbox.addEventListener("change", () => {
+                document.body.classList.toggle("dark")
+                })
+        </script>
+    </nav>
+    <div class="container">
+        <input type="radio" name="slider" id="item-1" checked>
+        <input type="radio" name="slider" id="item-2">
+        <input type="radio" name="slider" id="item-3">
+      <div class="cards">
+        <label class="card" for="item-1" id="song-1">
+          <img src="img/1.jpg" alt="song">
+        </label>
+        <label class="card" for="item-2" id="song-2">
+          <img src="img/2.jpg" alt="song">
+        </label>
+        <label class="card" for="item-3" id="song-3">
+          <img src="img/3.jpg" alt="song">
+        </label>
+      </div>
+      <div class="player">
+        <div class="upper-part">
+          <div class="play-icon">
+            <svg width="20" height="20" fill="#2992dc" stroke="#2992dc" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-play" viewBox="0 0 24 24">
+              <defs/>
+              <path d="M5 3l14 9-14 9V3z"/>
+            </svg>
+          </div>
+          <div class="info-area" id="test">
+            <label class="song-info" id="song-info-1">
+              <div class="title">Urs</div>
+              <div class="sub-line">
+                <div class="subtitle">Niki</div>
+                <div class="time">2.36</div>
+              </div>
+            </label>
+            <label class="song-info" id="song-info-2">
+              <div class="title">My Everything</div>
+              <div class="sub-line">
+                <div class="subtitle">Ariana Grande</div>
+                <div class="time">2.49</div>
+              </div>
+            </label>
+            <label class="song-info" id="song-info-3">
+              <div class="title">Aku Milikmu</div>
+              <div class="sub-line">
+                <div class="subtitle">Dewa 19</div>
+                <div class="time">5.32</div>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="progress-bar">
+          <span class="progress"></span>
+        </div>
+      </div>
+    </div>
+        <script>
+            $('input').on('change', function() {
+            $('body').toggleClass('blue');
+            });
+        </script>
+</body>
+</html>

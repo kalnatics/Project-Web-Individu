@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="startLiveJam()">Start Live Jam</button>
+  <button onclick="stopLiveJam()">Stop Live Jam</button>
+
+  <script>
+    let audioContext;
+    let intervalId;
+
+    function startLiveJam() {
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      playMetronome(120); // 120 BPM, you can change this
+      intervalId = setInterval(() => playMetronome(120), 60000 / 120); // Update interval based on BPM
+    }
+
+    function stopLiveJam() {
+      clearInterval(intervalId);
+      if (audioContext) {
+        audioContext.close();
+      }
+    }
+
+    function playMetronome(bpm) {
+      const oscillator = audioContext.createOscillator();
+      oscillator.type = 'sine';
+      oscillator.frequency.setValueAtTime(440, audioContext.currentTime); // You can change the frequency
+      oscillator.connect(audioContext.destination);
+      oscillator.start();
+      oscillator.stop(audioContext.currentTime + 0.1); // Adjust the duration as needed
+    }
+  </script>
+</body>
+</html>
